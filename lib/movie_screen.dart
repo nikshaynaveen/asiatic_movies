@@ -100,7 +100,17 @@ class _MovieScreenState extends State<MovieScreen> {
       body: BlocBuilder<MovieBloc, MovieState>(
         builder: (context, state) {
           if (state is MovieLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+              child: SizedBox(
+                width: 20, // Adjust the width as needed
+                height: 20, // Adjust the height as needed
+                child: CircularProgressIndicator(
+                  strokeWidth: 1, // Adjust the stroke width as needed
+                  valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(
+                      255, 255, 0, 140)), // Change the color as needed
+                ),
+              ),
+            );
           } else if (state is MovieLoaded) {
             final filteredMovies = state.movies.where((movie) {
               final titleLower = movie['title'].toLowerCase();
