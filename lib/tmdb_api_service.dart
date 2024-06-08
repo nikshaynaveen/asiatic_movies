@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:myapp/api_key.dart';
 
 class TMDBApiService {
-  static const String _apiKey = 'b2fbf4a90f25e10644ecd33171b4d9ae';
+  static const String _apiKey = apiKey;
   static const String _baseUrl = 'https://api.themoviedb.org/3';
   static const String _imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
